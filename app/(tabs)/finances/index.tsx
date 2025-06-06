@@ -7,25 +7,25 @@ import TransactionItem from '@/components/TransactionItem';
 import { mockTransactions } from '@/data/mockData';
 
 export default function FinancesScreen() {
-  const [selectedPeriod, setSelectedPeriod] = useState('This Month');
+  const [selectedPeriod, setSelectedPeriod] = useState('Esse mês');
   const [showPeriodDropdown, setShowPeriodDropdown] = useState(false);
 
-  const periods = ['Today', 'This Week', 'This Month', 'Last 3 Months', 'This Year'];
+  const periods = ['Hoje', 'Essa semana', 'Esse mês', 'Último três meses', 'Esse ano'];
 
   return (
     <View style={styles.container}>
-      <Header title="Financial Transactions" />
-      
+      <Header title="Gestão financeira" />
+
       <View style={styles.filterContainer}>
         <View style={styles.periodContainer}>
-          <TouchableOpacity 
-            style={styles.periodSelector} 
+          <TouchableOpacity
+            style={styles.periodSelector}
             onPress={() => setShowPeriodDropdown(!showPeriodDropdown)}
           >
             <Text style={styles.periodText}>{selectedPeriod}</Text>
             <ChevronDown size={18} color="#0F172A" />
           </TouchableOpacity>
-          
+
           {showPeriodDropdown && (
             <View style={styles.periodDropdown}>
               {periods.map((period) => (
@@ -48,47 +48,47 @@ export default function FinancesScreen() {
             </View>
           )}
         </View>
-        
+
         <TouchableOpacity style={styles.filterButton}>
           <Filter size={18} color="#0F172A" />
-          <Text style={styles.filterText}>Filter</Text>
+          <Text style={styles.filterText}>Filtro</Text>
         </TouchableOpacity>
       </View>
-      
+
       <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
         <Card style={styles.summaryCard}>
           <View style={styles.summaryRow}>
             <View style={styles.summaryItem}>
-              <Text style={styles.summaryLabel}>Total Income</Text>
-              <Text style={styles.summaryValue}>$12,540.00</Text>
+              <Text style={styles.summaryLabel}>Pedido total</Text>
+              <Text style={styles.summaryValue}>R$12,540.00</Text>
             </View>
             <View style={styles.summaryDivider} />
             <View style={styles.summaryItem}>
-              <Text style={styles.summaryLabel}>Total Expenses</Text>
-              <Text style={[styles.summaryValue, styles.expenseText]}>$8,790.00</Text>
+              <Text style={styles.summaryLabel}>Total de gastos</Text>
+              <Text style={[styles.summaryValue, styles.expenseText]}>R$8,790.00</Text>
             </View>
           </View>
           <View style={styles.horizontalDivider} />
           <View style={styles.balanceRow}>
-            <Text style={styles.balanceLabel}>Net Balance</Text>
-            <Text style={styles.balanceValue}>$3,750.00</Text>
+            <Text style={styles.balanceLabel}>Balanço</Text>
+            <Text style={styles.balanceValue}>R$3,750.00</Text>
           </View>
         </Card>
 
         <View style={styles.sectionHeader}>
-          <Text style={styles.sectionTitle}>Recent Transactions</Text>
+          <Text style={styles.sectionTitle}>Transacoes Recentes</Text>
           <TouchableOpacity>
-            <Text style={styles.seeAllText}>See All</Text>
+            <Text style={styles.seeAllText}>Ver tudo</Text>
           </TouchableOpacity>
         </View>
 
         {mockTransactions.map((transaction) => (
-          <TransactionItem 
+          <TransactionItem
             key={transaction.id}
             transaction={transaction}
           />
         ))}
-        
+
         <View style={styles.footer} />
       </ScrollView>
     </View>

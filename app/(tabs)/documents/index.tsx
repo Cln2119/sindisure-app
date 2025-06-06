@@ -8,9 +8,9 @@ import { mockDocuments } from '@/data/mockData';
 
 export default function DocumentsScreen() {
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedCategory, setSelectedCategory] = useState('Tudo');
 
-  const categories = ['All', 'Financial', 'Contracts', 'Reports', 'Invoices'];
+  const categories = ['Tudo', 'Financeiro', 'Contratos', 'Relatorios', 'Pedidos'];
 
   return (
     <View style={styles.container}>
@@ -19,18 +19,18 @@ export default function DocumentsScreen() {
           <Plus size={22} color="#FFFFFF" />
         </TouchableOpacity>
       } />
-      
+
       <View style={styles.searchContainer}>
         <View style={styles.searchBar}>
           <Search size={20} color="#64748B" />
           <Text style={styles.searchText}>Search documents...</Text>
         </View>
-        
+
         <TouchableOpacity style={styles.filterButton}>
           <Filter size={18} color="#0F172A" />
         </TouchableOpacity>
       </View>
-      
+
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
@@ -57,50 +57,50 @@ export default function DocumentsScreen() {
           </TouchableOpacity>
         ))}
       </ScrollView>
-      
+
       <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
         <View style={styles.sectionHeader}>
           <Text style={styles.sectionTitle}>Recent Documents</Text>
         </View>
-        
+
         {mockDocuments.slice(0, 3).map((document) => (
-          <DocumentItem 
+          <DocumentItem
             key={document.id}
             document={document}
           />
         ))}
-        
+
         <View style={styles.sectionHeader}>
           <Text style={styles.sectionTitle}>Document Folders</Text>
         </View>
-        
+
         <View style={styles.foldersGrid}>
-          {['Financial Reports', 'Contracts', 'Invoices', 'Meeting Minutes'].map((folder) => (
+          {['Relatórios Financeiros', 'Contratos', 'Pedidos', 'Meeting Minutes'].map((folder) => (
             <TouchableOpacity key={folder} style={styles.folderItem}>
               <View style={styles.folderIconContainer}>
                 <FolderOpen size={24} color="#0F766E" />
               </View>
               <Text style={styles.folderName}>{folder}</Text>
               <Text style={styles.folderCount}>
-                {folder === 'Financial Reports' ? '12 files' : 
-                 folder === 'Contracts' ? '8 files' :
-                 folder === 'Invoices' ? '23 files' : '5 files'}
+                {folder === 'Relatórios Financeiros' ? '12 files' :
+                  folder === 'Contratos' ? '8 files' :
+                    folder === 'Pedidos' ? '23 files' : '5 files'}
               </Text>
             </TouchableOpacity>
           ))}
         </View>
-        
+
         <View style={styles.sectionHeader}>
-          <Text style={styles.sectionTitle}>All Documents</Text>
+          <Text style={styles.sectionTitle}>Todos doscumentos</Text>
         </View>
-        
+
         {mockDocuments.map((document) => (
-          <DocumentItem 
+          <DocumentItem
             key={document.id}
             document={document}
           />
         ))}
-        
+
         <View style={styles.footer} />
       </ScrollView>
     </View>

@@ -1,59 +1,59 @@
 export const mockTransactions = [
   {
     id: '1',
-    type: 'income',
-    title: 'Monthly Dues Payment',
+    type: 'renda',
+    title: 'Pagamento do Mês',
     amount: 1250.00,
-    date: 'Today',
-    category: 'Maintenance Fees'
+    date: 'Hoje',
+    category: 'Taxas'
   },
   {
     id: '2',
-    type: 'expense',
-    title: 'Plumbing Repairs',
+    type: 'gastos',
+    title: 'Reparos de Encanamento',
     amount: 450.00,
-    date: 'Yesterday',
-    category: 'Maintenance'
+    date: 'Ontem',
+    category: 'Manutenção'
   },
   {
     id: '3',
     type: 'expense',
-    title: 'Electricity Bill',
+    title: 'Conta de Eletricidade',
     amount: 320.75,
-    date: 'Aug 15, 2023',
-    category: 'Utilities'
+    date: '15 de Agosto de 2023',
+    category: 'Utilidades'
   },
   {
     id: '4',
     type: 'income',
-    title: 'Special Assessment',
+    title: 'Taxa Extraordinária',
     amount: 800.00,
-    date: 'Aug 10, 2023',
-    category: 'Special Fee'
+    date: '10 de Agosto de 2023',
+    category: 'Taxa Especial'
   },
   {
     id: '5',
     type: 'expense',
-    title: 'Landscaping Services',
+    title: 'Serviços de Jardinagem',
     amount: 275.00,
-    date: 'Aug 05, 2023',
-    category: 'Grounds'
+    date: '05 de Agosto de 2023',
+    category: 'Áreas Verdes'
   },
   {
     id: '6',
     type: 'expense',
-    title: 'Security System Upgrade',
+    title: 'Atualização do Sistema de Segurança',
     amount: 1200.00,
-    date: 'Jul 28, 2023',
-    category: 'Security'
+    date: '28 de Julho de 2023',
+    category: 'Segurança'
   },
   {
     id: '7',
     type: 'income',
-    title: 'Late Fee Payment',
+    title: 'Pagamento de Multa por Atraso',
     amount: 50.00,
-    date: 'Jul 25, 2023',
-    category: 'Penalties'
+    date: '25 de Julho de 2023',
+    category: 'Multas'
   }
 ];
 
@@ -61,42 +61,42 @@ export const mockNotifications = [
   {
     id: '1',
     type: 'payment',
-    title: 'Payment Received',
-    message: 'Monthly maintenance fee payment of $1,250.00 has been received from Unit 304.',
-    time: '2 hours ago',
+    title: 'Pagamento Recebido',
+    message: 'Pagamento da taxa de manutenção mensal de R$ 1.250,00 recebido da Unidade 304.',
+    time: 'Há 2 horas',
     isRead: false
   },
   {
     id: '2',
     type: 'alert',
-    title: 'Budget Alert',
-    message: 'Maintenance expenses are approaching the monthly budget limit. Consider reviewing expenditures.',
-    time: 'Yesterday',
+    title: 'Alerta de Orçamento',
+    message: 'As despesas de manutenção estão se aproximando do limite orçamentário mensal. Considere revisar os gastos.',
+    time: 'Ontem',
     isRead: false,
     actions: true
   },
   {
     id: '3',
     type: 'warning',
-    title: 'Overdue Payment',
-    message: 'Unit 201 has an overdue maintenance payment of $1,250.00 that is 15 days late.',
-    time: '3 days ago',
+    title: 'Pagamento em Atraso',
+    message: 'A Unidade 201 está com um pagamento de manutenção em atraso de R$ 1.250,00 há 15 dias.',
+    time: 'Há 3 dias',
     isRead: true
   },
   {
     id: '4',
     type: 'alert',
-    title: 'Upcoming Expense',
-    message: 'Scheduled HVAC maintenance is due next week with an estimated cost of $750.00.',
-    time: '1 week ago',
+    title: 'Despesa Futura',
+    message: 'A manutenção programada do sistema de ar-condicionado está prevista para a próxima semana, com custo estimado de R$ 750,00.',
+    time: 'Há 1 semana',
     isRead: true
   },
   {
     id: '5',
     type: 'payment',
-    title: 'New Invoice',
-    message: 'New quarterly water utility invoice received for $2,450.00 due on September 15.',
-    time: '1 week ago',
+    title: 'Nova Fatura',
+    message: 'Nova fatura trimestral de água recebida no valor de R$ 2.450,00 com vencimento em 15 de setembro.',
+    time: 'Há 1 semana',
     isRead: true
   }
 ];
@@ -104,57 +104,57 @@ export const mockNotifications = [
 export const mockDocuments = [
   {
     id: '1',
-    title: 'Annual Financial Report 2023',
+    title: 'Relatório Financeiro Anual 2023',
     type: 'pdf',
-    date: 'Aug 15, 2023',
-    size: '4.2 MB'
+    date: '15 de Agosto de 2023',
+    size: '4,2 MB'
   },
   {
     id: '2',
-    title: 'Maintenance Contract - Elite Plumbing',
+    title: 'Contrato de Manutenção - Elite Encanamento',
     type: 'doc',
-    date: 'Jul 28, 2023',
-    size: '1.8 MB'
+    date: '28 de Julho de 2023',
+    size: '1,8 MB'
   },
   {
     id: '3',
-    title: 'Q2 Budget Analysis',
+    title: 'Análise Orçamentária do 2º Trimestre',
     type: 'xlsx',
-    date: 'Jul 10, 2023',
-    size: '3.5 MB'
+    date: '10 de Julho de 2023',
+    size: '3,5 MB'
   },
   {
     id: '4',
-    title: 'Board Meeting Minutes - July 2023',
+    title: 'Ata da Reunião do Conselho - Julho 2023',
     type: 'pdf',
-    date: 'Jul 05, 2023',
-    size: '2.1 MB'
+    date: '05 de Julho de 2023',
+    size: '2,1 MB'
   },
   {
     id: '5',
-    title: 'Insurance Policy Renewal 2023-2024',
+    title: 'Renovação da Apólice de Seguro 2023-2024',
     type: 'pdf',
-    date: 'Jun 22, 2023',
-    size: '5.7 MB'
+    date: '22 de Junho de 2023',
+    size: '5,7 MB'
   },
   {
     id: '6',
-    title: 'Special Assessment Notice',
+    title: 'Notificação de Taxa Extraordinária',
     type: 'doc',
-    date: 'Jun 15, 2023',
-    size: '1.2 MB'
+    date: '15 de Junho de 2023',
+    size: '1,2 MB'
   },
   {
     id: '7',
-    title: 'Reserve Fund Study',
+    title: 'Estudo do Fundo de Reserva',
     type: 'pdf',
-    date: 'May 30, 2023',
-    size: '8.4 MB'
+    date: '30 de Maio de 2023',
+    size: '8,4 MB'
   }
 ];
 
 export const fetchDashboardData = async () => {
-  // This would normally be an API call
+
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve({

@@ -6,7 +6,7 @@ import { mockNotifications } from '@/data/mockData';
 
 const NotificationItem = ({ notification }) => {
   const [isRead, setIsRead] = useState(notification.isRead);
-  
+
   const getIconColor = () => {
     switch (notification.type) {
       case 'payment':
@@ -19,31 +19,31 @@ const NotificationItem = ({ notification }) => {
         return '#0F766E';
     }
   };
-  
+
   return (
-    <TouchableOpacity 
+    <TouchableOpacity
       style={[styles.notificationItem, isRead && styles.notificationRead]}
       onPress={() => setIsRead(true)}
     >
       <View style={[styles.notificationIcon, { backgroundColor: getIconColor() }]}>
         <Bell size={18} color="#FFFFFF" />
       </View>
-      
+
       <View style={styles.notificationContent}>
         <View style={styles.notificationHeader}>
           <Text style={styles.notificationTitle}>{notification.title}</Text>
           <Text style={styles.notificationTime}>{notification.time}</Text>
         </View>
-        
+
         <Text style={styles.notificationMessage}>{notification.message}</Text>
-        
+
         {notification.actions && (
           <View style={styles.notificationActions}>
             <TouchableOpacity style={styles.actionButton}>
               <Check size={16} color="#10B981" />
               <Text style={[styles.actionText, { color: '#10B981' }]}>Accept</Text>
             </TouchableOpacity>
-            
+
             <TouchableOpacity style={styles.actionButton}>
               <XCircle size={16} color="#EF4444" />
               <Text style={[styles.actionText, { color: '#EF4444' }]}>Decline</Text>
@@ -70,18 +70,18 @@ export default function NotificationsScreen() {
   });
 
   const filters = [
-    { id: 'all', label: 'All' },
-    { id: 'payment', label: 'Payments' },
-    { id: 'alert', label: 'Alerts' },
-    { id: 'warning', label: 'Warnings' }
+    { id: 'all', label: 'Tudo' },
+    { id: 'payment', label: 'Pagamentos' },
+    { id: 'alert', label: 'Alertas' },
+    { id: 'warning', label: 'Pendente' }
   ];
 
   return (
     <View style={styles.container}>
-      <Header title="Notifications" />
-      
-      <ScrollView 
-        horizontal 
+      <Header title="Notificações" />
+
+      <ScrollView
+        horizontal
         showsHorizontalScrollIndicator={false}
         style={styles.filtersContainer}
         contentContainerStyle={styles.filtersContent}
@@ -106,7 +106,7 @@ export default function NotificationsScreen() {
           </TouchableOpacity>
         ))}
       </ScrollView>
-      
+
       {filteredNotifications.length > 0 ? (
         <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
           {filteredNotifications.map((notification) => (

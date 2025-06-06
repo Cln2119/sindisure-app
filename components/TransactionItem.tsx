@@ -17,9 +17,9 @@ interface TransactionItemProps {
 
 export default function TransactionItem({ transaction, onPress }: TransactionItemProps) {
   const isIncome = transaction.type === 'income';
-  
+
   return (
-    <TouchableOpacity 
+    <TouchableOpacity
       style={styles.container}
       onPress={onPress}
     >
@@ -33,7 +33,7 @@ export default function TransactionItem({ transaction, onPress }: TransactionIte
           <ArrowUpRight size={20} color="#FFFFFF" />
         )}
       </View>
-      
+
       <View style={styles.content}>
         <View style={styles.mainContent}>
           <Text style={styles.title}>{transaction.title}</Text>
@@ -44,13 +44,13 @@ export default function TransactionItem({ transaction, onPress }: TransactionIte
             {isIncome ? '+' : '-'}${Math.abs(transaction.amount).toFixed(2)}
           </Text>
         </View>
-        
+
         <View style={styles.details}>
           <Text style={styles.category}>{transaction.category}</Text>
           <Text style={styles.date}>{transaction.date}</Text>
         </View>
       </View>
-      
+
       <ChevronRight size={16} color="#94A3B8" />
     </TouchableOpacity>
   );

@@ -28,15 +28,15 @@ export const fetchTransactions = async (period = 'month') => {
 };
 
 export const login = async (email: string, password: string) => {
-  // Simulate API call delay
+
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (email === 'demo@example.com' && password === 'password') {
         resolve({
           user: {
             id: '1',
-            name: 'John Doe',
-            email: 'demo@example.com',
+            name: 'João',
+            email: 'exemplo@examplo.com',
             role: 'admin'
           },
           token: 'mock-jwt-token'
@@ -66,7 +66,7 @@ export const register = async (name: string, email: string, password: string) =>
 };
 
 export const resetPassword = async (email: string) => {
-  // Simulate API call delay
+
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve({ success: true });
